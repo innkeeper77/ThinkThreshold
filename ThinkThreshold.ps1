@@ -3,6 +3,9 @@
 # AS IS SOFTWARE- See documentation for details
 #
 # ----------------------------------------------------------------------------------------------------------------------------------
+#
+# This WILL NOT WORK unless you have the latest lenovo companion software installed. The registry location changed in that update.
+# Please submit a bug report on github if this script does not work, or stops working. Software updates can break it, and that is beyond my control. 
 
 $BattSerial = "L4NJ78S03E2" #YOU MUST CHANGE THIS FOR YOUR SPECIFIC LAPTOP - see readme
 $StartP = "85"
