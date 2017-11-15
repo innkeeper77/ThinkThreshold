@@ -25,28 +25,19 @@
 # 2. Create a task in task scheduler.
 # 	Open Task scheduler, Action>Create Task. Give it a name (Eg:ThresholdSetter)
 #	Select "Run whether user is logged on or not", and "Run with the highest privileges".
-# 	Under the Triggers tab, click "New" at the bottom and under "Begin the task", select "At System Startup"
+# 	Under the Triggers tab, click "New" at the bottom and under "Begin the task", select "At workstation unlock"
 #	Check the box for "Delay task for:" and set it to 1 minute (if desired). 
 #	Under Actions, hit "New" at the bottom and set the action to "Start a program". 
 #	Set the Program/script to Powershell.exe and under Add arguments, add the following: 
 #	-ExecutionPolicy Bypass -WindowStyle Hidden C:\Startup\ThresholdSetter.ps1
 #	Under Conditions, uncheck "Start this task only if the computer is on AC power".
-# 	Under Settings, change "Stop this task if it runs longer than:" to 1 hour.
+# Under Settings, change "Stop this task if it runs longer than:" to 1 hour.
+# If desired, set the task to repeat indefinately. I have mine reset the values every 30 minutes, and that seems to work well for my laptop
 #
 # 	Note: The task does not start the script directly. You are making a task to start powershell in the background, 
 #	and then having powershell run the specific script.
-#	
-#	Optionally, you can run the task more often than just startup, eg: whenever the computer resumes from sleep.
-# 	Do this only if your laptop forgets the thresholds you set even if running every startup
-#	To create triggers for when your computer wakes from Connected Standby and when the computer wakes from sleep,
-#	go to the action you created above.
-#	Under the Triggers tab, hit "New" at the bottom and under "Begin the task", select "On an event".
-# 	Under Log choose System, under Source choose Kernel-Power, and under Event ID type 507.
-#	Check the box for "Delay task for:" and set it to 30 seconds.
-#	Create another new trigger doing the exact same thing, but put Event ID as 107 this time.
-# 	(507 is waking from connected standby, 107 is waking from sleep)
 #
-# 	You should have to reboot to get the battery to accept the new thresholds. 
+# 	You now have to reboot to get the battery to accept the new thresholds. 
 # 	Once you have set everything up, run the script manually (just this once) and reboot. 
 # 	Your thresholds should now be set!
 #
