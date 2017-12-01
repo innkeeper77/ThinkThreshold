@@ -4,7 +4,7 @@
 #
 # ----------------------------------------------------------------------------------------------------------------------------------
 #
-# This WILL NOT WORK unless you have the latest lenovo companion software installed. The registry location changed in that update.
+# This MAY NOT WORK unless you have the latest lenovo companion software installed. Future updates may also break the script. You have been warned. 
 # Please submit a bug report on github if this script does not work, or stops working. Software updates can break it, and that is beyond my control. 
 
 $BattSerial = "L4NJ78S03E2" #YOU MUST CHANGE THIS FOR YOUR SPECIFIC LAPTOP - Battery serial number as shown in Lenovo Companion battery info. If you have two batteries, you can run two copies of the script and set them differently as desired.
