@@ -1,15 +1,14 @@
 # Script to set battery thresholds for Lenovo Thinkpads running Windows 10
-# Tested on a Thinkpad Yoga X1 2nd Gen 2017 - may or may not work for you.
+# Tested on a Thinkpad Yoga X1 2nd Gen 2017 running the latest Lenovo Companion software- may or may not work for you.
 # AS IS SOFTWARE- See documentation for details
 #
 # ----------------------------------------------------------------------------------------------------------------------------------
 #
-# This MAY NOT WORK unless you have the latest lenovo companion software installed. Future updates may also break the script. You have been warned. 
 # Please submit a bug report on github if this script does not work, or stops working. Software updates can break it, and that is beyond my control. 
 
 $BattSerial = "L4NJ78S03E2" #YOU MUST CHANGE THIS FOR YOUR SPECIFIC LAPTOP - Battery serial number as shown in Lenovo Companion battery info. If you have two batteries, you can run two copies of the script and set them differently as desired.
-$StartP = "85"
-$StopP = "90"
+$StartP = "85" # Set this to the charge start percentage. The default 85 means charging starts if the battery is below 85% full
+$StopP = "90" # Set this to the charge stop percentage. The default 90 means charging stops if the battery is at or above 90% full
 
 $val = Get-ItemProperty -Path hklm:software\WOW6432Node\Lenovo\PWRMGRV\ConfKeys\Data\$BattSerial -Name "ChargeStartControl"
 if($val.ChargeStartControl -ne 1)
