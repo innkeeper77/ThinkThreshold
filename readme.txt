@@ -11,10 +11,13 @@
 # 	To find it, copy and pase the following command into windows powershell (run as admin)
 # 	Get-ChildItem -Path hklm:software\Wow6432Node\Lenovo\PWRMGRV\ConfKeys\Data
 # 	The serial number should be obvious: The key folder name on the left, that is a mix of letters and numbers. Eg: mine looks like L4NJ78S03E2
-# 	Type your unique serial number into the BattSerial variableending up similar to: $BattSerial = "L4NJ78S03E2"
+# 	Type your unique serial number into the BattSerial variable. 
+#   The end result should be similar to: $BattSerial = "L4NJ78S03E2"
 # 
-# 2. Your threshold start percentage. When should the battery start charging, in a percentage? The script default is set to 85% ($StartP = "85")
-# 3. Your threshold stop percentage. When should the battery STOP charging, in a percentage? The script default is set to 90%   ($StopP = "90")
+# 2. Choose your threshold start percentage. When should the battery start charging, in a percentage? The script default is set to 85% 
+# ($StartP = "85") # (Change the number in the quotation marks to change the setting)
+# 3. Your threshold stop percentage. When should the battery STOP charging, in a percentage? The script default is set to 90%   
+# ($StopP = "90")
 #
 # After you set these, if you run this script, the battery thresholds will be set. You likely have to reboot for them to take effect.
 #
